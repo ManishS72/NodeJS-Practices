@@ -40,10 +40,10 @@ app.get('/pineapple',(req, res) =>{
     res.send(info);
 });
 
-app.post('/data', (req, res) =>{
-   
-    const data = req.info;
-    console.log(data);
+app.use((req, res) => {
+    res.status(404).send("This page does not exist");
+});
 
-    res.send("Data Recived");
+app.post('/', (req,res) => {
+    res.send("Hello Pinuts, I am hungry Now so can i eat you");
 });
